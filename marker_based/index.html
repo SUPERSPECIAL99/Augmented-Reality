@@ -19,7 +19,8 @@
     renderer="logarithmicDepthBuffer: true;"
     embedded
     arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
-  >
+
+      >
   <a-entity id="annyang" annyang-speech-recognition></a-entity>
             <a-entity id="switch" speech-command__start="command: start; type: attribute; attribute: visible; targetElement: #snow; value: true;"
                       speech-command__stop="command: stop; type: attribute; attribute: visible; targetElement: #snow; value: false;">
@@ -35,7 +36,49 @@
                           material="color:  #000080"></a-entity>
 
 
-        </a-marker>
+                        </a-marker>
+
+
+
+<!--______________________________________________________________________________________________-->
+
+
+<a-marker preset="pattern" type="pattern" url ="./assets/pattern-ok.patt">
+    <a-text text="value: Manolis" rotation="-90 0 0" position="0.5 0.4 0.7" color="#33ACFF"></a-text>
+    <a-image src="./assets/man.jpg" rotation="90 180 0"></a-image>
+    <a-text text="value: Psychalis" rotation="-90 0 0" position="0.5 0.3 0.6" color="#33ACFF"></a-text>
+    
+    </a-marker>
+    
+    
+    <a-assets>
+    <a-asset-item id="hydrogen" src="./assets/hydrogen.gltf"></a-asset-item>
+    </a-assets>
+    <a-marker id="hydro" type="pattern" url="./assets/pattern-card-H.patt">
+    <a-image src="./assets/pattern-card-H.png" rotation="-90 0 0" width: 1.2; height: 1.2></a-image>
+    <a-entity position="0 1 0" rotation="0 90 0" scale="0.1 0.1 0.1"
+    gltf-model="#hydrogen"
+    animation__rotate = "property: rotation; dur: 10000; easing: linear; dir: normal; from:0 0 0; to: 360 0 0; loop: true;" >
+    
+    </a-entity>
+    </a-marker>
+    <a-assets>
+
+
+    <a-asset-item id="oxygen" src="./assets/oxygen.gltf"></a-asset-item>
+</a-assets>
+<a-marker id="oxy" type="pattern" url="./assets/pattern-card-O.patt">
+<a-image src="./assets/pattern-card-O.png" rotation="-90 0 0" width: 1.2; height: 1.2></a-image>
+<a-entity position="0 1 0" scale="0.3 0.3 0.3"
+gltf-model="#oxygen"
+animation__rotate = "property: rotation; dur: 10000; easing: linear; dir: normal; from:0 0 0; to: 0 0 360; loop: true;" >
+
+</a-entity>
+</a-marker>
+
+
+
+
         <a-entity camera></a-entity>
         </a-scene>
     </body>
